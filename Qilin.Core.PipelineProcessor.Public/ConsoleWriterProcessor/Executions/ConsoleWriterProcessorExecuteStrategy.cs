@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using Qilin.Core.PipelineProcessor.Abstractions.Execution;
 using Qilin.Core.PipelineProcessor.Abstractions.Extensions;
 using Qilin.Core.PipelineProcessor.Public.ConsoleWriterProcessor.Config;
@@ -16,7 +17,9 @@ public class ConsoleWriterProcessorExecuteStrategy : IProcessorStrategy
             throw new ConsoleWriterProcessorException("Config not found");
         }
         
-        var message = config.Message.GetValue<string>(processorExecutionRequest);
+        var processorExecutionRequestInJObject = JObject.FromObject(processorExecutionRequest);
+        
+        var message = config.Message.GetValue<string>(processorExecutionRequestInJObject);
         
         Console.WriteLine(message);
         
