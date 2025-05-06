@@ -20,7 +20,6 @@ public abstract class PipelineProcessorConfig
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public MergeTimeoutConfig? MergeTimeoutConfig { get; set; }
     
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public uint ExecutionDelayInSeconds { get; set; }
     
     [JsonIgnore]
