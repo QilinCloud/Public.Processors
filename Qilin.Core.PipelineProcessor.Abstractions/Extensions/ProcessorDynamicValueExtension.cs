@@ -6,22 +6,22 @@ namespace Qilin.Core.PipelineProcessor.Abstractions.Extensions;
 
 public static class ProcessorDynamicValueExtension
 {
-    public static object? GetValue(this ProcessorDynamicValue dynamicValue, JObject? jObject = null)
+    public static object? GetValue(this ProcessorDynamicValue dynamicValue, JToken? jObject = null)
     {
         ValidateRawAndPath(dynamicValue);
-
+    
         if (dynamicValue.Raw is not null) return dynamicValue.Raw;
 
-        if (jObject is null)
-        {
-            throw new ProcessorDynamicValueException("Input object is required");
-        }
-
         // TODO: need to convert to ExpandoObject to not depend on Newtonsoft.Json
-        return jObject.SelectToken(dynamicValue.Path!);
+        return jObject switch
+        {
+            null => throw new ProcessorDynamicValueException("Input object is required"),
+            JValue jValue => jValue,
+            _ => jObject.SelectToken(dynamicValue.Path!)
+        };
     }
 
-    public static T? GetValue<T>(this ProcessorDynamicValue dynamicValue, JObject? jObject = null)
+    public static T? GetValue<T>(this ProcessorDynamicValue dynamicValue, JToken? jObject = null)
     {
         var value = dynamicValue.GetValue(jObject);
 
@@ -40,7 +40,7 @@ public static class ProcessorDynamicValueExtension
         }
     }
     
-    public static object GetRequiredValue(this ProcessorDynamicValue dynamicValue, JObject? jObject = null)
+    public static object GetRequiredValue(this ProcessorDynamicValue dynamicValue, JToken? jObject = null)
     {
         var value = dynamicValue.GetValue(jObject);
 
@@ -52,7 +52,7 @@ public static class ProcessorDynamicValueExtension
         return value;
     }
     
-    public static T GetRequiredValue<T>(this ProcessorDynamicValue dynamicValue, JObject? jObject = null)
+    public static T GetRequiredValue<T>(this ProcessorDynamicValue dynamicValue, JToken? jObject = null)
     {
         var value = dynamicValue.GetValue<T>(jObject);
         
