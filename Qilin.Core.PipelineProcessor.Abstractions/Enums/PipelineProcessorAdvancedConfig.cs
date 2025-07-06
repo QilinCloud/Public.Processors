@@ -4,6 +4,5 @@ public enum PipelineProcessorAdvancedConfig
 {
     Timeout,
     Retry,
-    MergeTimeout,
     ExecutionDelay
 }

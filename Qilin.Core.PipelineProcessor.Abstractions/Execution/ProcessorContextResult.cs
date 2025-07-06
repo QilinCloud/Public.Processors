@@ -5,7 +5,7 @@ public class ProcessorContextResult
     public ProcessorExecutedStatus Status { get; init; }
     public Dictionary<string, object> AdditionalInformation { get; set; } = new();
     public Exception? Exception { get; init; }
-    public Dictionary<string, string>? FlowObjectAttributes { get; init; } = new();
+    public Dictionary<string, object?> FlowObjectAttributes { get; init; } = new();
     public object? FlowObjectContent { get; set; }
 }
 
