@@ -11,7 +11,5 @@ public class ProcessorExecutionRequest
     public string PipelineId { get; init; } = null!;
     public string ProcessorId { get; init; } = null!;
     public Dictionary<string, Dictionary<string, string>> FlowObjectAttributes { get; init; }
-    // [Obsolete("Use FlowObjectContents instead", false)]
-    // public object? FlowObjectContent { get; set; }
     public Dictionary<string, object?> FlowObjectContents { get; init; }
 }
