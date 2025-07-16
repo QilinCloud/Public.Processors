@@ -63,6 +63,22 @@ public static class ProcessorDynamicValueExtension
 
         return value;
     }
+    
+    public static ProcessorDynamicValue ToRawValue(this ProcessorDynamicValue dynamicValue, JToken? jObject = null)
+    {
+        var value = dynamicValue.GetValue(jObject);
+        
+        if (value is null)
+        {
+            throw new ProcessorDynamicValueException("Value is required");
+        }
+
+        return new ProcessorDynamicValue()
+        {
+            Path = null,
+            Raw = value
+        };
+    }
 
     private static void ValidateRawAndPath(ProcessorDynamicValue dynamicValue)
     {
