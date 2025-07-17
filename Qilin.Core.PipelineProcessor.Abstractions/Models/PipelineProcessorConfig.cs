@@ -17,10 +17,8 @@ public abstract class PipelineProcessorConfig
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public RetryConfig? RetryConfig { get; set; }
     
-    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public MergeTimeoutConfig? MergeTimeoutConfig { get; set; }
-    
     public uint ExecutionDelayInSeconds { get; set; }
+    public string? ProcessorToGetFlowObjectContent { get; set; }
     
     [JsonIgnore]
     [BsonIgnore]

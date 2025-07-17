@@ -27,7 +27,6 @@ public class ConsoleWriterProcessorExecuteStrategy : IProcessorStrategy
         return Task.FromResult(new ProcessorContextResult
         {
             Status = ProcessorExecutedStatus.Passed,
-            FlowObjectContent = processorExecutionRequest.FlowObjectContent
         });
     }
 }
