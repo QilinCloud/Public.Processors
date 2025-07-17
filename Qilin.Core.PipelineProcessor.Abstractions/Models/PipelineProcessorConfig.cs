@@ -18,6 +18,7 @@ public abstract class PipelineProcessorConfig
     public RetryConfig? RetryConfig { get; set; }
     
     public uint ExecutionDelayInSeconds { get; set; }
+    public string? ProcessorToGetFlowObjectContent { get; set; }
     
     [JsonIgnore]
     [BsonIgnore]
