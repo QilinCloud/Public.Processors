@@ -10,7 +10,7 @@ public class ProcessorExecutionRequest
     public string SubscriptionId { get; init; } = null!;
     public string PipelineId { get; init; } = null!;
     public string ProcessorId { get; init; } = null!;
-    public string? ParentProcessorId { get; init; }
+    public string[] ParentProcessorIds { get; init; } = [];
     public Dictionary<string, Dictionary<string, string>> FlowObjectAttributes { get; init; }
     public Dictionary<string, object?> FlowObjectContents { get; init; }
 }
