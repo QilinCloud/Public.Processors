@@ -16,4 +16,5 @@ public class ProcessorExecutionRequest
     public string TrackingTransactionId { get; init; } = null!;
     public string CurrentTransactionBlockId { get; init; } = null!;
     public List<string> TrackingTransactionParentBlockIds { get; init; } = [];
+    public string EntryProcessorId { get; set; } = null!;
 }
