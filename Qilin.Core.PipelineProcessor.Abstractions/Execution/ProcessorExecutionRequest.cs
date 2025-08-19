@@ -13,7 +13,8 @@ public class ProcessorExecutionRequest
     public string[] ParentProcessorIds { get; init; } = [];
     public Dictionary<string, Dictionary<string, string>> FlowObjectAttributes { get; init; }
     public Dictionary<string, object?> FlowObjectContents { get; init; }
-    public string TrackingTransactionId { get; init; } = null!;
+    public string PipelineExecutionId { get; init; } = null!;
+    public string? ObjectTransactionId { get; init; }
     public string CurrentTransactionBlockId { get; init; } = null!;
     public List<string> TrackingTransactionParentBlockIds { get; init; } = [];
     public string EntryProcessorId { get; set; } = null!;
