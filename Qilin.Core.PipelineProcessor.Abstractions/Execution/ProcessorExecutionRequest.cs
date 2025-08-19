@@ -15,7 +15,6 @@ public class ProcessorExecutionRequest
     public Dictionary<string, object?> FlowObjectContents { get; init; }
     public string PipelineExecutionId { get; init; } = null!;
     public string? ObjectTransactionId { get; init; }
-    public string CurrentTransactionBlockId { get; init; } = null!;
-    public List<string> TrackingTransactionParentBlockIds { get; init; } = [];
+    public string CurrentProcessorExecutionId { get; init; } = null!;
     public string EntryProcessorId { get; set; } = null!;
 }
