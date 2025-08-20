@@ -14,7 +14,7 @@ public class ProcessorExecutionRequest
     public Dictionary<string, Dictionary<string, string>> FlowObjectAttributes { get; init; }
     public Dictionary<string, object?> FlowObjectContents { get; init; }
     public string PipelineExecutionId { get; init; } = null!;
-    public string? ObjectTransactionId { get; init; }
+    public string[] ObjectTransactionIds { get; init; } = [];
     public string CurrentProcessorExecutionId { get; init; } = null!;
     public string EntryProcessorId { get; set; } = null!;
 }
