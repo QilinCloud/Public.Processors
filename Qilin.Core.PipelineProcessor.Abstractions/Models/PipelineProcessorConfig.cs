@@ -9,7 +9,10 @@ namespace Qilin.Core.PipelineProcessor.Abstractions.Models;
 public abstract class PipelineProcessorConfig
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public OnErrorBehavior OnErrorBehavior { get; set; } = OnErrorBehavior.Stop;
+    public ContinueOnErrorBehavior ContinueOnErrorBehavior { get; set; } = ContinueOnErrorBehavior.Stop;
+    
+    [JsonConverter(typeof(StringEnumConverter))]
+    public TrackingStatusOnErrorBehavior TrackingStatusOnErrorBehavior { get; set; } = TrackingStatusOnErrorBehavior.Failed;
     
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public TimeoutConfig? TimeoutConfig { get; set; }
