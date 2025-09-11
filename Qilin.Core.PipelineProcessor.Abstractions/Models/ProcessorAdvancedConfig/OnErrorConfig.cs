@@ -3,12 +3,12 @@ namespace Qilin.Core.PipelineProcessor.Abstractions.Models.ProcessorAdvancedConf
 public sealed class OnErrorConfig
 {
     public bool IsContinue { get; set; }
-    public OnErrorCustomStatus OnErrorCustomStatus { get; set; } = OnErrorCustomStatus.Failed;
+    public OnErrorCustomStatus CustomStatus { get; set; } = OnErrorCustomStatus.Failed;
 
     public static readonly OnErrorConfig Default = new()
     {
         IsContinue = false,
-        OnErrorCustomStatus = OnErrorCustomStatus.Failed,
+        CustomStatus = OnErrorCustomStatus.Failed,
     };
 }
 
