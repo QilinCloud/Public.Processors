@@ -1,8 +1,12 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace Qilin.Core.PipelineProcessor.Abstractions.Models.ProcessorAdvancedConfig;
 
 public sealed class OnErrorConfig
 {
     public bool IsContinue { get; set; }
+    
     public OnErrorCustomStatus CustomStatus { get; set; } = OnErrorCustomStatus.Failed;
 
     public static readonly OnErrorConfig Default = new()
@@ -12,6 +16,7 @@ public sealed class OnErrorConfig
     };
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum OnErrorCustomStatus
 {
     Failed = 1,
