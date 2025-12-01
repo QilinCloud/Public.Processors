@@ -21,4 +21,5 @@ public class ProcessorExecutionRequest
     // Test mode only
     public Dictionary<string, Dictionary<string, string>> PinnedFlowObjectAttributes { get; init; } = new();
     public Dictionary<string, object?> PinnedFlowObjectContents { get; init; } = new();
+    public bool IsTestMode { get; init; } = false;
 }
