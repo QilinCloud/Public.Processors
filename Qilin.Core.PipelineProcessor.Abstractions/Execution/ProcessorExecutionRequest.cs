@@ -17,4 +17,9 @@ public class ProcessorExecutionRequest
     public string[] ObjectTransactionIds { get; init; } = [];
     public string CurrentProcessorExecutionId { get; init; } = null!;
     public string EntryProcessorId { get; set; } = null!;
+    
+    // Test mode only
+    public Dictionary<string, Dictionary<string, string>> PinnedFlowObjectAttributes { get; init; } = new();
+    public Dictionary<string, object?> PinnedFlowObjectContents { get; init; } = new();
+    public bool IsTestMode { get; init; } = false;
 }
