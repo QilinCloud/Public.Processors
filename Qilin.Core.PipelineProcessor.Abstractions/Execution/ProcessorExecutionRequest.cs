@@ -19,7 +19,7 @@ public class ProcessorExecutionRequest
     public string EntryProcessorId { get; set; } = null!;
     
     // Test mode only
-    public Dictionary<string, Dictionary<string, string>> PinnedFlowObjectAttributes { get; init; } = new();
-    public Dictionary<string, object?> PinnedFlowObjectContents { get; init; } = new();
+    public Dictionary<string, Dictionary<string, string>> MockedFlowObjectAttributes { get; init; } = new();
+    public Dictionary<string, object?> MockedFlowObjectContents { get; init; } = new();
     public bool IsTestMode { get; init; } = false;
 }
