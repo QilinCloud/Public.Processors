@@ -18,6 +18,7 @@ public abstract class PipelineProcessorConfig
     
     public uint ExecutionDelayInSeconds { get; set; }
     public string? ProcessorToGetFlowObjectContent { get; set; }
+    public string? ProcessorGroupId { get; set; }
     
     [JsonIgnore]
     [BsonIgnore]
