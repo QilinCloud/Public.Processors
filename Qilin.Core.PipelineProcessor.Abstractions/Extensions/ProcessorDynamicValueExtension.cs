@@ -70,7 +70,8 @@ public static class ProcessorDynamicValueExtension
         
         if (value is null)
         {
-            throw new ProcessorDynamicValueException("Validation failed: One of the following properties is required — Raw or Path. Both values cannot be null.");
+            throw new ProcessorDynamicValueException(
+                "Validation failed: One of the following properties is required — Raw or Path. Both values cannot be null.");
         }
 
         return new ProcessorDynamicValue()
@@ -89,7 +90,8 @@ public static class ProcessorDynamicValueExtension
 
         if (dynamicValue.Raw is null && dynamicValue.Path is null)
         {
-            throw new ProcessorDynamicValueException("Validation failed: One of the following properties is required — Raw or Path. Both values cannot be null.");
+            throw new ProcessorDynamicValueException(
+                "Validation failed: One of the following properties is required — Raw or Path. Both values cannot be null.");
         }
     }
 }
